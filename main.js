@@ -28,7 +28,7 @@ button.a.onChanged = () => {
 }
 
 const columns = toDigestValues(
-	"\"What's the frequency, Kenneth?\", he asked  as he pummeled Dan Rather."
+	"\"What's the frequency, Kenneth?\", he asked as he pummeled Dan Rather."
 );
 
 Timer.repeat(() => {
