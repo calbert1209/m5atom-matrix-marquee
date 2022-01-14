@@ -1,7 +1,6 @@
 
 import Timer from "timer";
-import {ColumnDigest, MatrixFrame} from "ledMatrix";
-import { MatrixCanvas } from "./ledMatrix";
+import {ColumnDigest, MatrixFrame, MatrixCanvas} from "ledMatrix";
 import { toDigestValues } from "./glyphs";
 
 if (!globalThis.lights || !globalThis.accelerometer || !globalThis.button)
