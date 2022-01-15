@@ -2,11 +2,12 @@
 import Timer from "timer";
 import {ColumnDigest, MatrixFrame, MatrixCanvas} from "ledMatrix";
 import { toDigestValues } from "./glyphs";
+import Net from "net";
 
 if (!globalThis.lights || !globalThis.accelerometer || !globalThis.button)
 	throw new Error("this M5 example requires lights, accelerometer, and a button");
 
-let brightness = 130;
+let brightness = 80;
 lights.brightness = brightness;
 
 const mtxCanvas = new MatrixCanvas(lights);
@@ -26,9 +27,10 @@ button.a.onChanged = () => {
 	}
 }
 
-const columns = toDigestValues(
-	"\"What's the frequency, Kenneth?\", he asked as he pummeled Dan Rather."
-);
+// const columns = toDigestValues(
+// 	"\"What's the frequency, Kenneth?\", he asked as he pummeled Dan Rather."
+// );
+const columns = toDigestValues(`${Net.get('IP')}`);
 
 Timer.repeat(() => {
 	clear();
